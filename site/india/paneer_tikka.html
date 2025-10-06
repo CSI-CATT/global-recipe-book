@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paneer Tikka Recipe | Global Recipe Book</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #fdfaf6;
+      margin: 0;
+      padding: 0;
+      color: #4a4a4a;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .recipe-header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #f8f3ed;
+      border-bottom: 1px solid #e0d9d1;
+    }
+    .recipe-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #c45d3c;
+      margin: 0;
+    }
+    .recipe-header p {
+      font-size: 1.1rem;
+      color: #6b6b6b;
+      max-width: 600px;
+      margin: 10px auto 0;
+    }
+    .recipe-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    .recipe-body {
+      padding: 30px 40px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+    }
+    .ingredients-section {
+      border-right: 1px solid #eee;
+      padding-right: 30px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: #c45d3c;
+      border-bottom: 2px solid #f2d4c9;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+    .ingredients-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .ingredients-section ul li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 25px;
+    }
+    .ingredients-section ul li::before {
+      content: '🧀';
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+    .instructions-section ol {
+      padding-left: 20px;
+    }
+    .instructions-section ol li {
+      margin-bottom: 15px;
+      padding-left: 10px;
+    }
+    .instructions-section ol li::marker {
+      font-weight: bold;
+      color: #c45d3c;
+    }
+    .time-info {
+      background: #fff9f2;
+      border: 1px solid #f2d4c9;
+      border-radius: 8px;
+      padding: 15px 20px;
+      margin-top: 20px;
+    }
+    .footer-nav {
+      text-align: center;
+      padding: 20px;
+      background: #f8f3ed;
+      border-top: 1px solid #e0d9d1;
+      font-weight: 500;
+    }
+    .footer-nav a {
+      color: #c45d3c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    @media (max-width: 768px) {
+      .recipe-body {
+        grid-template-columns: 1fr;
+      }
+      .ingredients-section {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding-right: 0;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+      }
+      .recipe-body {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="recipe-header">
+      <h1>Paneer Tikka</h1>
+      <p>A classic Indian appetizer featuring marinated paneer cubes grilled to smoky perfection. The perfect blend of spice and char.</p>
+    </header>
+
+    <main>
+      <img src="../../assets/india/paneer_tikka.jpg" alt="A delicious plate of Paneer Tikka" class="recipe-image">
+      
+      <div class="recipe-body">
+        <aside class="ingredients-section">
+          <h2 class="section-title">Ingredients</h2>
+          <ul>
+            <li>250g Paneer (cubed)</li>
+            <li>1 cup Thick Yogurt</li>
+            <li>1 large Onion (in squares)</li>
+            <li>1 large Bell Pepper (in squares)</li>
+            <li>1 tbsp Ginger-Garlic Paste</li>
+            <li>1 tbsp Gram Flour (Besan)</li>
+            <li>1.5 tsp Red Chili Powder</li>
+            <li>1 tsp Turmeric Powder</li>
+            <li>1 tsp Garam Masala</li>
+            <li>1 tsp Chaat Masala</li>
+            <li>1 tbsp Lemon Juice</li>
+            <li>2 tbsp Mustard Oil</li>
+            <li>Salt to taste</li>
+          </ul>
+          <div class="time-info">
+            <strong>Prep:</strong> 20 min | <strong>Marinate:</strong> 2 hrs | <strong>Cook:</strong> 15 min
+          </div>
+        </aside>
+
+        <section class="instructions-section">
+          <h2 class="section-title">Instructions</h2>
+          <ol>
+            <li>Create a thick marinade by whisking yogurt with all spices, gram flour, ginger-garlic paste, lemon juice, and salt.</li>
+            <li>Heat mustard oil until lightly smoking, cool slightly, and mix into the marinade.</li>
+            <li>Gently coat paneer, onion, and bell pepper cubes in the marinade. Refrigerate and let marinate for at least 2 hours.</li>
+            <li>Preheat oven to 220°C (430°F). Thread the marinated items onto skewers.</li>
+            <li>Arrange skewers on a baking tray and bake for 10-15 minutes, turning once, until charred at the edges.</li>
+            <li>Sprinkle with chaat masala and serve hot with mint chutney.</li>
+          </ol>
+        </section>
+      </div>
+    </main>
+    
+    <footer class="footer-nav">
+      <a href="../../index.html">← Back to Global Recipe Book</a>
+    </footer>
+  </div>
+</body>
+</html>
