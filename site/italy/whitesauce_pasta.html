@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italian White Sauce Pasta (Fettuccine Alfredo)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #edcac6;
+            margin: 0;
+            padding: 20px;
+            color: #4a4a4a;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            background: #ffffff;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+            border-radius: 12px;
+            overflow: hidden;
+            border-top: 5px solid #d9534f;
+        }
+
+        .recipe-banner {
+            position: relative;
+            height: 300px;
+        }
+
+        .recipe-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .recipe-banner h1 {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            font-family: 'Lora', serif;
+            font-size: 3.5rem;
+            color: white;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .recipe-content {
+            padding: 30px;
+        }
+
+        .recipe-content p.description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-top: 0;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        .meta-item {
+            background-color: #fef5f5;
+            border: 1px solid #fce3e3;
+            color: #d9534f;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .meta-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(217, 83, 79, 0.2);
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            font-size: 2rem;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .details-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .ingredients, .instructions {
+            flex: 1 1 300px;
+        }
+
+        h3 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #d9534f;
+            border-bottom: 2px solid #fce3e3;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .instructions strong {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #333;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        ul li, ol li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li::before {
+            content: "•";
+            color: #d9534f;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .serving {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fdfaf6;
+            border-left: 4px solid #d9534f;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .serving h2 {
+            margin-top: 0;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .recipe-banner h1 {
+                font-size: 2.5rem;
+                left: 15px;
+                bottom: 15px;
+            }
+
+            .recipe-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="recipe-banner">
+            <img src="/assets/italy/whitesauce_pasta.jpg" alt="Creamy Italian White Sauce Pasta">
+            <h1>Italian White Sauce Pasta</h1>
+        </header>
+
+        <main class="recipe-content">
+            <p class="description">
+                Italian White Sauce Pasta, also known as <strong>Fettuccine Alfredo</strong>, is a classic and elegant dish featuring pasta coated in a rich, creamy sauce made from butter, Parmesan cheese, and heavy cream.
+                Beloved for its comforting and indulgent flavor, this dish is a timeless favorite in Italian-American cuisine.
+            </p>
+            <p class="description">
+                Below is a simple yet luxurious recipe — smooth, creamy, and perfectly rich, made with just a few simple ingredients for an authentic Italian experience.
+            </p>
+
+            <div class="meta-info">
+                <div class="meta-item">Prep Time: 10 minutes</div>
+                <div class="meta-item">Cook Time: 15 minutes</div>
+                <div class="meta-item">Serves: 4 people</div>
+            </div>
+
+            <div class="details-section">
+                <div class="ingredients">
+                    <h2>🍞Ingredients</h2>
+                    <h3>For the Pasta</h3>
+                    <ul>
+                        <li>400g Fettuccine pasta</li>
+                        <li>Salt for boiling water</li>
+                    </ul>
+
+                    <h3>For the White Sauce (Alfredo Sauce)</h3>
+                    <ul>
+                        <li>½ cup (115g) unsalted butter</li>
+                        <li>2 cloves garlic, minced</li>
+                        <li>1½ cups (360 ml) heavy cream</li>
+                        <li>1½ cups freshly grated Parmesan cheese</li>
+                        <li>Salt and black pepper, to taste</li>
+                        <li>2 tbsp fresh parsley, chopped (for garnish)</li>
+                        <li>A pinch of nutmeg (optional)</li>
+                    </ul>
+                </div>
+
+                <div class="instructions">
+                    <h2>📝Instructions</h2>
+                    <strong>1. Cook the Pasta</strong>
+                    <ol>
+                        <li>Bring a large pot of salted water to a rolling boil.</li>
+                        <li>Add the fettuccine and cook until al dente (firm to the bite).</li>
+                        <li>Before draining, reserve about 1 cup of pasta water. Drain the pasta.</li>
+                    </ol>
+
+                    <strong>2. Prepare the White Sauce</strong>
+                    <ol>
+                        <li>In a large skillet, melt butter over medium heat.</li>
+                        <li>Add minced garlic and sauté for about 1 minute, until fragrant (don’t let it brown).</li>
+                        <li>Slowly pour in heavy cream, whisking gently. Simmer for 3–4 minutes until slightly thickened.</li>
+                        <li>Reduce heat to low and gradually whisk in grated Parmesan until smooth and creamy.</li>
+                        <li>Season with salt, pepper, and a pinch of nutmeg (optional).</li>
+                    </ol>
+
+                    <strong>3. Combine and Serve</strong>
+                    <ol>
+                        <li>Add the drained pasta to the skillet and toss well to coat in the sauce.</li>
+                        <li>If the sauce is too thick, add a splash of the reserved pasta water to adjust consistency.</li>
+                        <li>Garnish with fresh parsley and extra Parmesan. Serve immediately.</li>
+                    </ol>
+                </div>
+
+                <div class="serving">
+                    <h2>🍴Serving Tip</h2>
+                    <p class="description">
+                        Serve hot, paired with grilled chicken or shrimp for added protein. It also goes perfectly with steamed vegetables,
+                        a fresh green salad, or crusty garlic bread. A glass of crisp white wine like Pinot Grigio complements the dish beautifully.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
