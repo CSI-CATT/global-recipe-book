@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Samosa — Global Recipe Book</title>
+
+  <meta name="description" content="Authentic Samosa recipe — crisp pastry, spiced potato-pea filling, served with chutney. Step-by-step with tips."/>
+  <style>
+    :root{
+      --bg:#FFF8E6;        
+      --panel:#FFF3D6;     
+      --accent:#FF8A4B;    
+      --accent-dark:#E75F2E;
+      --muted:#6b6b6b;
+      --card-shadow: 0 8px 24px rgba(233,150,70,0.12);
+      --glass: rgba(255,255,255,0.6);
+      --maxw:900px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      background: linear-gradient(180deg, var(--bg) 0%, #FFF6E0 100%);
+      color:#222;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:36px 18px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--maxw);
+      background:var(--panel);
+      border-radius:14px;
+      box-shadow:var(--card-shadow);
+      padding:28px;
+      border:1px solid rgba(232,150,70,0.08);
+    }
+
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+    .logo{
+      width:72px;
+      height:72px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      font-size:28px;
+      box-shadow:0 6px 18px rgba(231,95,46,0.18);
+    }
+    h1{margin:0;font-size:22px;line-height:1.15;}
+    .subtitle{color:var(--muted);margin-top:6px;font-size:13px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:20px;
+      margin-top:18px;
+    }
+    @media (max-width:920px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.5));
+      border-radius:10px;
+      padding:18px;
+      border:1px solid rgba(0,0,0,0.03);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+
+    .hero{
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+    }
+    .hero img{
+      width:150px;
+      height:120px;
+      object-fit:cover;
+      border-radius:10px;
+      box-shadow: 0 8px 20px rgba(233,150,70,0.12);
+      border:3px solid rgba(255,255,255,0.6);
+    }
+
+    .meta{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .chip{
+      display:inline-block;
+      padding:6px 10px;
+      background:rgba(231,95,46,0.12);
+      color:var(--accent-dark);
+      border-radius:999px;
+      font-weight:600;
+      font-size:13px;
+      border:1px solid rgba(231,95,46,0.08);
+    }
+
+    h2 { margin:0 0 10px 0; font-size:18px; color:#2b2b2b}
+    .section-title{ font-weight:700; color:var(--accent-dark); margin-bottom:8px; }
+
+    ul { padding-left:18px; margin-top:8px; margin-bottom:8px; color:#333; }
+    li { margin-bottom:6px; line-height:1.45; }
+
+    .timing-grid{ display:flex; gap:10px; flex-wrap:wrap; margin-top:6px; }
+    .timing{ background: white; padding:8px 12px; border-radius:8px; font-size:13px; box-shadow:0 4px 10px rgba(0,0,0,0.03) }
+
+    .ingredients, .instructions { margin-top:10px; }
+    .instruction-step { margin-bottom:14px; padding-left:10px; border-left:3px solid rgba(231,95,46,0.08); background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0.2)); padding:10px 12px; border-radius:8px; }
+    .note { font-size:13px; color:var(--muted); margin-top:8px; }
+
+    .controls{ display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
+    .btn{
+      background:var(--accent);
+      color:white;
+      border:none;
+      padding:10px 14px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:700;
+      box-shadow:0 8px 20px rgba(231,95,46,0.12);
+    }
+    .btn.ghost{ background:transparent; color:var(--accent-dark); border:1px solid rgba(231,95,46,0.12); box-shadow:none }
+
+    .side{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .side .card{ padding:14px; }
+
+    .serving {
+      font-weight:700;
+      color:var(--accent-dark);
+      font-size:15px;
+    }
+
+    footer{ margin-top:16px; font-size:13px; color:var(--muted); }
+
+    /* print friendly */
+    @media print{
+      body{background:white}
+      .btn, .controls { display:none }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <div class="logo" aria-hidden>S</div>
+      <div>
+        <h1>Samosa — Authentic & Heartfelt</h1>
+        <div class="subtitle">A warm, aromatic samosa recipe inspired by the classic kitchens of India. Crisp pastry, fragrant filling — perfect for chai-time.</div>
+      </div>
+    </header>
+
+    <div class="grid" role="region" aria-label="Recipe content">
+      <!-- Main column -->
+      <main>
+        <section class="card hero" aria-labelledby="about-title">
+          <img src="../../assets/india/samosa.jpg" alt="Plate of samosas" onerror="this.style.display='none'">
+          <div class="meta">
+            <div class="chip">Cuisine: Indian</div>
+            <div style="font-weight:700; font-size:15px; margin-top:6px">Overview</div>
+            <p class="note" id="about-title">This samosa focuses on a gently-spiced potato and green-pea filling — scented with warm spices, fennel and a hint of lime. It’s crisp and golden, ideal with mint and tamarind chutney.</p>
+
+            <div class="timing-grid" aria-hidden>
+              <div class="timing"><strong>Prep:</strong> 30 mins</div>
+              <div class="timing"><strong>Cook:</strong> 25 mins</div>
+              <div class="timing"><strong>Rest:</strong> 30 mins (dough)</div>
+              <div class="timing"><strong>Serves:</strong> 4 (≈12 small samosas)</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card ingredients" aria-labelledby="ingredients-title">
+          <h2 id="ingredients-title">Ingredients</h2>
+
+          <div style="display:flex;gap:18px;flex-wrap:wrap">
+            <div style="flex:1; min-width:220px">
+              <h3 class="section-title">For the Dough</h3>
+              <ul>
+                <li>2 cups all-purpose flour (maida)</li>
+                <li>3 tbsp ghee (or oil) + extra for sealing</li>
+                <li>½ tsp salt</li>
+                <li>Warm water, as needed (approx. ⅔ cup)</li>
+              </ul>
+            </div>
+
+            <div style="flex:1; min-width:220px">
+              <h3 class="section-title">For the Filling</h3>
+              <ul>
+                <li>3 medium potatoes, boiled and mashed</li>
+                <li>½ cup green peas (fresh/frozen)</li>
+                <li>2 tbsp oil</li>
+                <li>1 tsp cumin seeds</li>
+                <li>1 tsp fennel seeds (saunf) — lightly crushed</li>
+                <li>1 small onion, finely chopped (optional)</li>
+                <li>1–2 green chillies, finely chopped (adjust to taste)</li>
+                <li>1 tsp grated ginger</li>
+                <li>½ tsp turmeric powder</li>
+                <li>1 tsp coriander powder</li>
+                <li>½ tsp garam masala</li>
+                <li>Salt to taste</li>
+                <li>Juice of ½ lemon</li>
+                <li>Small handful fresh coriander (cilantro), chopped</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="note">Tip: Use waxy potatoes for creamier texture; mash lightly keeping a few small pieces for bite.</div>
+        </section>
+
+        <section class="card instructions" aria-labelledby="instructions-title">
+          <h2 id="instructions-title">Instructions — Step by Step</h2>
+
+          <div class="instruction-step" aria-labelledby="step1">
+            <strong id="step1">1. Prepare the dough.</strong>
+            <p>In a bowl, combine the flour and salt. Rub in the ghee (or oil) until the mixture looks like coarse breadcrumbs. Add warm water little by little and gently knead into a soft, firm dough. Cover with a damp cloth and rest for 30 minutes.</p>
+          </div>
+
+          <div class="instruction-step" aria-labelledby="step2">
+            <strong id="step2">2. Cook the filling.</strong>
+            <p>Heat oil in a pan. Add cumin and crushed fennel seeds; let them sizzle. Add chopped onion (if using), ginger and green chillies; sauté until soft. Add turmeric, coriander powder and peas — cook 2–3 minutes. Stir in the mashed potatoes, salt and garam masala. Cook on low for 3–4 minutes, add lemon juice and coriander leaves. Taste and adjust seasoning. Let the filling cool.</p>
+          </div>
+
+          <div class="instruction-step" aria-labelledby="step3">
+            <strong id="step3">3. Shape the samosas.</strong>
+            <p>Divide dough into 10–12 equal balls. Roll each ball into an oval (about 5–6 inches). Cut oval in half. Take one semi-circle, form a cone by folding, seal the edge with a little water, fill with 1–2 tbsp of filling, fold the top and seal firmly using a bit of dough-water mix.</p>
+          </div>
+
+          <div class="instruction-step" aria-labelledby="step4">
+            <strong id="step4">4. Frying.</strong>
+            <p>Heat oil in a deep pan on medium. Test with a small piece of dough; it should sizzle and rise slowly. Fry samosas in batches on medium heat until golden brown, turning to cook evenly (about 4–6 minutes per batch). Drain on paper towels.</p>
+          </div>
+
+          <div class="instruction-step" aria-labelledby="step5">
+            <strong id="step5">5. Serve and enjoy.</strong>
+            <p>Let samosas rest 2–3 minutes; serve warm with mint chutney and sweet tamarind chutney, and a steaming cup of chai. For an Awadhi touch, garnish with a sprinkle of chaat masala or finely chopped coriander.</p>
+          </div>
+
+          <div class="note">Storage: Keep in an airtight container at room temperature for 1 day. Reheat in an oven/air-fryer to restore crispiness.</div>
+        </section>
+
+        <div class="card" style="margin-top:12px">
+          <h2 class="section-title">Pro Tips from Indian kitchens</h2>
+          <ul>
+            <li>Lightly crush fennel (saunf) — it gives a subtle aroma that distinguishes samosas.</li>
+            <li>Use ghee for dough if you want a richer flavor; mixing ghee + oil gives a crisp shell.</li>
+            <li>Seal samosas with a good pinch of dough and a gentle press to avoid bursting while frying.</li>
+            <li>Don’t overfill — small, well-sealed samosas fry more evenly.</li>
+          </ul>
+        </div>
+
+      </main>
+
+      <!-- Side column -->
+      <aside class="side" aria-labelledby="aside-title">
+        <div class="card" aria-hidden>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div class="serving">Samosa</div>
+              <div style="font-size:13px;color:var(--muted)">Comfort food from the heart of Awadh</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:20px;font-weight:800;color:var(--accent-dark)">⭐</div>
+              <div style="font-size:12px;color:var(--muted)">Beginner friendly</div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <strong>Quick checklist</strong>
+            <ul>
+              <li>Boil potatoes fully, then mash.</li>
+              <li>Rest dough 30 mins for flakiness.</li>
+              <li>Medium-low oil for even browning.</li>
+            </ul>
+          </div>
+
+          <div style="margin-top:10px">
+            <strong>Tools</strong>
+            <ul>
+              <li>Deep frying pan or kadai</li>
+              <li>Rolling pin & board</li>
+              <li>Slotted spoon</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div style="font-weight:700; color:var(--accent-dark); margin-bottom:8px">Save & Share</div>
+          <div class="controls">
+            <button class="btn" onclick="window.print()">Print / Save PDF</button>
+            <button class="btn ghost" onclick="copyToClipboard()">Copy Ingredients</button>
+          </div>
+          <div id="copyMessage" class="note" style="display:none;margin-top:8px;color:green">Ingredients copied to clipboard!</div>
+        </div>
+
+        <div class="card" id="credits">
+          <div style="font-weight:700; color:var(--accent-dark)">Respectful note</div>
+          <p class="note">This recipe is contributed with love to the community. This page respectfully honours the flavours and traditions of Indian cuisine.</p>
+        </div>
+
+      </aside>
+    </div>
+
+   
+  </div>
+
+  <script>
+    function copyToClipboard(){
+      const text = [
+        "Dough: 2 cups flour, 3 tbsp ghee/oil, 1/2 tsp salt, warm water",
+        "Filling: 3 boiled potatoes, 1/2 cup peas, 1 tsp cumin, 1 tsp fennel, spices, lemon, coriander"
+      ].join('\\n');
+      navigator.clipboard?.writeText(text).then(()=>{
+        document.getElementById('copyMessage').style.display='block';
+        setTimeout(()=> document.getElementById('copyMessage').style.display='none', 2200);
+      }).catch(()=>alert('Copy not supported'));
+    }
+  </script>
+</body>
+</html>
