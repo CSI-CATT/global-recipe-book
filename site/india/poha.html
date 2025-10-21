@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Poha — Global Recipe Book</title>
+  <meta name="description" content="Authentic  Poha — light, tangy and fragrant. Step-by-step recipe inspired by central Indian kitchens.">
+
+  <style>
+    :root{
+      --bg:#FFF9E8;
+      --panel:#FFF4D9;
+      --accent:#FF974A;
+      --accent-dark:#E6642A;
+      --muted:#616161;
+      --card-shadow: 0 8px 26px rgba(230,120,50,0.12);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      --maxw:900px;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,var(--bg), #FFF6E5);
+      color:#222;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:36px 18px;
+    }
+    .container{ width:100%; max-width:var(--maxw); background:var(--panel); border-radius:14px; padding:26px; box-shadow:var(--card-shadow); border:1px solid rgba(230,120,50,0.06) }
+    header{ display:flex; gap:14px; align-items:center; margin-bottom:16px }
+    .logo{ width:68px; height:68px; border-radius:12px; background:linear-gradient(135deg,var(--accent),var(--accent-dark)); display:flex; align-items:center; justify-content:center; color:white; font-weight:800; font-size:28px; }
+    h1{ margin:0; font-size:22px }
+    .subtitle{ color:var(--muted); font-size:13px; margin-top:6px }
+    .grid{ display:grid; grid-template-columns:1fr 340px; gap:18px; margin-top:18px }
+    @media(max-width:920px){ .grid{ grid-template-columns:1fr } }
+    .card{ background: linear-gradient(180deg, rgba(255,255,255,0.64), rgba(255,255,255,0.5)); border-radius:10px; padding:16px; border:1px solid rgba(0,0,0,0.03); box-shadow:0 6px 18px rgba(0,0,0,0.04) }
+    .hero{ display:flex; gap:14px; align-items:flex-start }
+    .hero img{ width:140px; height:110px; object-fit:cover; border-radius:10px; box-shadow: 0 8px 20px rgba(230,120,50,0.12); border:3px solid rgba(255,255,255,0.6) }
+    .chip{ display:inline-block; padding:6px 10px; background:rgba(230,120,50,0.12); color:var(--accent-dark); border-radius:999px; font-weight:700; font-size:13px }
+    h2{ margin:0 0 10px 0; font-size:18px; color:#2b2b2b }
+    .section-title{ font-weight:700; color:var(--accent-dark); margin-bottom:8px }
+    ul{ padding-left:18px; margin-top:8px; color:#333 }
+    li{ margin-bottom:6px; line-height:1.45 }
+    .timing{ display:inline-block; background:white; padding:8px 12px; border-radius:8px; font-size:13px; box-shadow:0 6px 12px rgba(0,0,0,0.04); margin-right:8px }
+    .instruction-step{ margin-bottom:12px; padding-left:10px; border-left:3px solid rgba(230,120,50,0.08); background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0.2)); padding:10px 12px; border-radius:8px }
+    .note{ font-size:13px; color:var(--muted); margin-top:6px }
+    .controls{ display:flex; gap:8px; margin-top:10px; flex-wrap:wrap }
+    .btn{ background:var(--accent); color:white; border:none; padding:10px 14px; border-radius:10px; cursor:pointer; font-weight:700; box-shadow:0 8px 20px rgba(230,120,50,0.12) }
+    .btn.ghost{ background:transparent; color:var(--accent-dark); border:1px solid rgba(230,120,50,0.12); box-shadow:none }
+    footer{ margin-top:14px; font-size:13px; color:var(--muted) }
+    @media print{ .btn, .controls { display:none } body{ background:white } }
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <div class="logo" aria-hidden>P</div>
+      <div>
+        <h1> Poha — Soft, Tangy & Fragrant</h1>
+        <div class="subtitle">A comforting Poha recipe from central India — light, lemon-kissed and perfect for breakfast or tea-time.</div>
+      </div>
+    </header>
+
+    <div class="grid" role="region" aria-label="Recipe content">
+      <main>
+        <section class="card hero" aria-labelledby="about-title">
+          <img src="../../assets/india/poha.jpg" alt="Bowl of tasty poha" onerror="this.style.display='none'">
+          <div style="flex:1">
+            <div class="chip">Cuisine of India</div>
+            <div style="font-weight:700; margin-top:8px">Overview</div>
+            <p id="about-title" class="note">This style of  Poha is made with well-washed, soft flattened rice, tempered with mustard, curry leaves and cashews, finished with a splash of lemon and fresh coriander. Light, wholesome and full of homely flavours.</p>
+
+            <div style="margin-top:8px">
+              <span class="timing"><strong>Prep:</strong> 10 mins</span>
+              <span class="timing"><strong>Cook:</strong> 8 mins</span>
+              <span class="timing"><strong>Serves:</strong> 2–3</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="ingredients-title">
+          <h2 id="ingredients-title">Ingredients</h2>
+          <div style="display:flex;gap:18px;flex-wrap:wrap">
+            <div style="flex:1; min-width:220px">
+              <h3 class="section-title">Main</h3>
+              <ul>
+                <li>2 cups poha (flattened rice) — thick variety</li>
+                <li>1 medium onion, finely chopped</li>
+                <li>1–2 green chillies, chopped (adjust to taste)</li>
+                <li>1 small potato (optional), diced & shallow fried</li>
+                <li>½ cup roasted peanuts or cashews</li>
+              </ul>
+            </div>
+
+            <div style="flex:1; min-width:220px">
+              <h3 class="section-title">Tempering & Flavours</h3>
+              <ul>
+                <li>2 tbsp oil or ghee</li>
+                <li>1 tsp mustard seeds</li>
+                <li>1 tsp urad dal (split black gram) — optional</li>
+                <li>8–10 curry leaves</li>
+                <li>½ tsp turmeric powder</li>
+                <li>Salt to taste</li>
+                <li>Juice of 1 lemon</li>
+                <li>Fresh coriander (cilantro), chopped</li>
+                <li>2 tbsp sugar (optional, for balance)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="note">Tip: Use washed and well-drained poha so it becomes fluffy, not mushy.</div>
+        </section>
+
+        <section class="card" aria-labelledby="instructions-title">
+          <h2 id="instructions-title">Method — Step by Step</h2>
+
+          <div class="instruction-step" id="step1">
+            <strong>1. Prepare the poha.</strong>
+            <p>Place poha in a sieve or colander and rinse gently under running water for 10–20 seconds until softened. Let it drain well for 2–3 minutes. Fluff gently with a fork and set aside.</p>
+          </div>
+
+          <div class="instruction-step" id="step2">
+            <strong>2. Temper the spices.</strong>
+            <p>Heat oil or ghee in a pan. Add mustard seeds and let them splutter. Add urad dal (if using) and fry until light golden. Add curry leaves, green chillies and chopped onion. Sauté until onion turns translucent.</p>
+          </div>
+
+          <div class="instruction-step" id="step3">
+            <strong>3. Add potatoes & nuts (optional).</strong>
+            <p>If using potatoes, add the diced, lightly fried potato pieces. Add roasted peanuts or cashews and toss for a minute.</p>
+          </div>
+
+          <div class="instruction-step" id="step4">
+            <strong>4. Spice & combine.</strong>
+            <p>Add turmeric and salt. Mix well. Add the drained poha and gently combine, ensuring the tempering coats the poha evenly. Sprinkle sugar (if using) and mix. Cook on low heat for 1–2 minutes to warm through.</p>
+          </div>
+
+          <div class="instruction-step" id="step5">
+            <strong>5. Finish & serve.</strong>
+            <p>Turn off the heat. Add lemon juice and chopped coriander. Toss gently. Serve hot with extra lemon wedges and a side of chai or yoghurt.</p>
+          </div>
+
+          <div class="note">Serving suggestion: A small spoon of sev or fresh pomegranate seeds makes for a delightful contrast.</div>
+        </section>
+
+        <div class="card" style="margin-top:12px">
+          <h2 class="section-title">Chef’s Notes — Central India Touch</h2>
+          <ul>
+            <li>In many Indian homes, a pinch of sugar is added to balance the lemon.</li>
+            <li>Curry leaves and roasted peanuts are essential for authentic aroma and texture.</li>
+            <li>Use thick poha variety — it holds shape and gives the right bite.</li>
+          </ul>
+        </div>
+      </main>
+
+      <aside class="card" aria-labelledby="aside-title">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-weight:800; color:var(--accent-dark); font-size:15px">Poha </div>
+            <div style="font-size:12px;color:var(--muted)">Comfort breakfast from central India</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:20px;font-weight:800;color:var(--accent-dark)">🌾</div>
+            <div style="font-size:12px;color:var(--muted)">Beginner friendly</div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <strong>Quick checklist</strong>
+          <ul>
+            <li>Rinse and drain poha — not soggy</li>
+            <li>Tempering must be aromatic</li>
+            <li>Serve immediately for best texture</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:10px">
+          <div class="controls">
+            <button class="btn" onclick="window.print()">Print / Save PDF</button>
+            <button class="btn ghost" onclick="copyIngredients()">Copy Ingredients</button>
+          </div>
+          <div id="copyMsg" class="note" style="display:none;color:green;margin-top:8px">Ingredients copied to clipboard!</div>
+        </div>
+
+        <div style="margin-top:12px" class="note">
+          This recipe celebrates homely flavours — shared with respect to local kitchens and traditions.
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      Contributed to Global Recipe Book • Please star the repo to support community recipes ❤️
+    </footer>
+  </div>
+
+  <script>
+    function copyIngredients(){
+      const text = [
+        "Poha (thick) – 2 cups",
+        "Onion – 1 medium",
+        "Green chillies – 1–2",
+        "Peanuts/cashews – 1/2 cup",
+        "Mustard seeds, curry leaves, turmeric, lemon, salt"
+      ].join('\\n');
+      navigator.clipboard?.writeText(text).then(()=>{
+        document.getElementById('copyMsg').style.display='block';
+        setTimeout(()=> document.getElementById('copyMsg').style.display='none',2200);
+      }).catch(()=>alert('Copy not supported'));
+    }
+  </script>
+</body>
+</html>
