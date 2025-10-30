@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motichoor Laddu | Global Recipe Book</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Baloo Bhai 2", cursive;
+        background-color: #f6e5ce;
+        margin: 0;
+        padding: 0;
+        color: #4a4a4a;
+        line-height: 1.7;
+      }
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: #ffffff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .recipe-header {
+        text-align: center;
+        padding: 40px 20px;
+        background:linear-gradient(90deg, #EFF5D2, rgba(241, 119, 208, 0.848));
+        border-bottom: 1px solid #e0d9d1;
+      }
+      .recipe-header h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        color: #756b65;
+        margin: 0;
+      }
+      .recipe-header p {
+        font-size: 1.1rem;
+        color: #6b6b6b;
+        max-width: 600px;
+        margin: 10px auto 0;
+      }
+      .recipe-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+      .recipe-body {
+        padding: 30px 40px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 40px;
+      }
+      .ingredients-section {
+        border-right: 1px solid #eee;
+        padding-right: 30px;
+      }
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        color: #c45d3c;
+        border-bottom: 2px solid #eed1c6;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+      }
+      .ingredients-section ul {
+        list-style: none;
+        padding: 0;
+      }
+      .ingredients-section ul li {
+        margin-bottom: 12px;
+        position: relative;
+        padding-left: 25px;
+      }
+      .ingredients-section ul li::before {
+        content: "🧀";
+        position: absolute;
+        left: 0;
+        top: 2px;
+      }
+      .instructions-section ol {
+        padding-left: 20px;
+      }
+      .instructions-section ol li {
+        margin-bottom: 15px;
+        padding-left: 10px;
+      }
+      .instructions-section ol li::marker {
+        font-weight: bold;
+        color: #c45d3c;
+      }
+      .time-info {
+        background: #fff9f2;
+        border: 1px solid #ffccba;
+        border-radius: 8px;
+        padding: 15px 20px;
+        margin-top: 20px;
+      }
+      .footer-nav {
+        text-align: center;
+        padding: 20px;
+        background: #faddf1;
+        border-top: 1px solid #ff9196;
+        font-weight: 500;
+      }
+      .footer-nav a {
+        color: #756b65;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      @media (max-width: 768px) {
+        .recipe-body {
+          grid-template-columns: 1fr;
+        }
+        .ingredients-section {
+          border-right: none;
+          border-bottom: 1px solid #eee;
+          padding-right: 0;
+          padding-bottom: 30px;
+          margin-bottom: 30px;
+        }
+        .recipe-body {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="recipe-header">
+        <h1>Motichoor Laddu</h1>
+        <p>
+          A festive Indian sweet made of golden boondi pearls bound in syrupy perfection. A melt-in-mouth delight of sweetness and joy.
+        </p>
+      </header>
+
+      <main>
+        <img
+          src="/assets/india/Motichoor.jpg"
+          alt="Motichoor"
+          class="recipe-image"
+        />
+
+        <div class="recipe-body">
+          <aside class="ingredients-section">
+            <h2 class="section-title">Ingredients</h2>
+            <ul>
+              🟠 For the Boondi:
+              <li>Besan (gram flour) – 1 cup</li>
+              <li>
+                Water – around ¾ cup (adjust to make a smooth, flowing batter)
+              </li>
+              <li>
+                Orange food color – a pinch (optional, for traditional color)
+              </li>
+              <li>Ghee or oil – for deep frying</li>
+            </ul>
+            <ul>
+              🍯 For the Sugar Syrup:
+              <li>Sugar – ¾ cup</li>
+              <li>Water – ½ cup</li>
+              <li>Cardamom powder – ¼ teaspoon</li>
+              <li>A few saffron strands (optional, for aroma and color)</li>
+              <li>Rose water or kewra essence – few drops (optional)</li>
+            </ul>
+            <ul>
+              🌰 For Garnish:
+              <li>Chopped pistachios or almonds – 1–2 tablespoons</li>
+              <li>Edible silver foil (vark) – optional, for presentation</li>
+            </ul>
+            <div class="time-info">
+              <strong>Prep:</strong> 15 min | <strong>Cook:</strong> 25 min |
+              <strong>Set:</strong> 10 min
+            </div>
+          </aside>
+
+          <section class="instructions-section">
+            <h2 class="section-title">Preparation Method</h2>
+            <ol>
+              <li>
+                In a mixing bowl, combine besan, a pinch of orange food color,
+                and water to make a smooth, lump-free batter of flowing
+                consistency.
+              </li>
+              <li>
+                Heat ghee or oil in a deep pan. Hold a perforated ladle (boondi
+                jhara) over the pan and pour batter through it, letting small
+                droplets fall into the hot oil.
+              </li>
+              <li>
+                Fry the boondis on medium heat until just cooked and soft, not
+                crispy. Drain and set aside on paper towels.
+              </li>
+              <li>
+                In another pan, combine sugar and water to make a one-string
+                consistency syrup. Add cardamom powder, saffron strands, and a
+                few drops of rose water.
+              </li>
+              <li>
+                Add the fried boondi to the warm syrup. Mix gently until well
+                coated. Let it rest for 5–10 minutes to absorb the syrup.
+              </li>
+              <li>
+                When the mixture is slightly warm, add chopped nuts if desired
+                and shape into round laddus with greased hands.
+              </li>
+              <li>
+                Garnish with pistachios or silver vark and allow to set for 10
+                minutes before serving.
+              </li>
+            </ol>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer-nav">
+        <a href="/index.html">← Back to Global Recipe Book</a>
+      </footer>
+    </div>
+  </body>
+</html>
